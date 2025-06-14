@@ -1,7 +1,7 @@
 #código para abrir a câmera 
 import cv2
 
-cap = cv2.VideoCapture (1) #para uma câmera IP - externa a máquina
+cap = cv2.VideoCapture (0) #para uma câmera IP - externa a máquina
 
 #verifica se a câmera abriu corretamente 
 if not cap.isOpened (): 
