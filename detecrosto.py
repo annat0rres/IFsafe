@@ -2,13 +2,12 @@ import cv2
 import matplotlib.pyplot as plt
 
 
-imagePath = 'Frank Ocean.jpeg'
+imagePath = 'Daniela & Manon.jpeg'
 
 img = cv2.imread(imagePath)
 plt.imshow(img) 
-
 img.shape
-(4000, 2667, 3)
+(3000, 2667, 3)
 
 #convertendo a imagem para cores na escala de cinza, visto q é mais fácil
 
@@ -27,6 +26,7 @@ face_classifier = cv2.CascadeClassifier(
 face = face_classifier.detectMultiScale(
     gray_image, scaleFactor=1.1, minNeighbors=5, minSize = (40, 40)
 )
+print(f"Eba! Detectamos {len(face)} face(s)")
 
 #caixa delimitadora
 for (x, y, w, h) in face:
@@ -37,7 +37,8 @@ for (x, y, w, h) in face:
 img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
 #imprimindo caixinha ao redor do rosto
-plt.figure(figsize = (20, 10))
-plt.imshow(img_rgb)
+#plt.figure(figsize = (20, 10)) -- mostra a imagem com cores invertidas
+plt.imshow(img_rgb) #mostra a imagem com as cores normais
 plt.axis('off')
+plt.show()
 
