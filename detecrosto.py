@@ -2,7 +2,7 @@ import cv2
 import matplotlib.pyplot as plt
 
 
-imagePath = 'Daniela & Manon.jpeg'
+imagePath = 'manon meret.jpeg'
 
 img = cv2.imread(imagePath)
 plt.imshow(img) 
