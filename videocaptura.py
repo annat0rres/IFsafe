@@ -24,6 +24,7 @@ while True:
     gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY) #iremos guardar a imagem convertida na variavel gray
     
 
+
     #detectando o rosto:
     faces = face_classifier.detectMultiScale(
         gray, scaleFactor=1.1, minNeighbors=5, minSize=(40, 40)
